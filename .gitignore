@@ -1,5 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/venv,windows
-# Edit at https://www.toptal.com/developers/gitignore?templates=venv,windows
+# Created by https://www.toptal.com/developers/gitignore/api/venv,windows,dotenv
+# Edit at https://www.toptal.com/developers/gitignore?templates=venv,windows,dotenv
+
+### dotenv ###
+.env
 
 ### venv ###
 # Virtualenv
@@ -41,4 +44,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/venv,windows
+# End of https://www.toptal.com/developers/gitignore/api/venv,windows,dotenv
