@@ -60,6 +60,17 @@ class Database:
     async def get_product(self, product_id):
         query = "SELECT name,price,description FROM products WHERE id=$1"
         return await self.pool.fetchrow(query, product_id)
+    
+    async def update_product(self, product_id, name, price, description):
+        query = """
+        UPDATE products
+        SET name = $1,
+        price = $2,
+        description = $3
+        WHERE id = $4
+        """
+        await self.pool.execute(query, name, price, description, product_id)
+
 
     async def delete_product(self, product_id):
         query = "DELETE FROM products WHERE id=$1"

@@ -14,7 +14,7 @@ def products_inline(products):
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-def product_actions(product_id):
+def admin_product_actions(product_id):
     return InlineKeyboardMarkup(
         inline_keyboard=[
             [
@@ -26,6 +26,19 @@ def product_actions(product_id):
                     text="🗑 Delete",
                     callback_data=f"admindelete_{product_id}"
                 )
+            ]
+        ]
+    )
+
+def product_actions(product_id):
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="Savatcha qoshish",
+                    callback_data=f"savatcha_{product_id}"
+                )
+                
             ]
         ]
     )
