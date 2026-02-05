@@ -56,6 +56,10 @@ class Database:
     async def get_products(self):
         query = "SELECT * FROM products WHERE is_active=TRUE"
         return await self.pool.fetch(query)
+    
+    async def get_product(self, product_id):
+        query = "SELECT name,price,description FROM products WHERE id=$1"
+        return await self.pool.fetchrow(query, product_id)
 
     async def delete_product(self, product_id):
         query = "DELETE FROM products WHERE id=$1"

@@ -1,6 +1,7 @@
 from aiogram import Router
 from aiogram.types import Message, CallbackQuery
 from keyboards.inline import products_inline
+from filters.role import RoleFilter
 
 router = Router()
 
@@ -13,7 +14,7 @@ async def show_products(message: Message, db):
     )
 
 
-@router.callback_query(lambda c: c.data.startswith("product_"))
+@router.callback_query(lambda c: c.data.startswith("adminproduct_"),RoleFilter("user"))
 async def product_detail(callback: CallbackQuery):
     product_id = callback.data.split("_")[1]
     await callback.message.answer(

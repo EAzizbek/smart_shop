@@ -26,7 +26,7 @@ def admin_panel_menu():
     return ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="➕ Mahsulot qo‘shish")],
-            [KeyboardButton(text="📋 Mahsulotlar")],
+            [KeyboardButton(text="📋 Mahsulotlar(Admin)")],
             [KeyboardButton(text="👥 Userlar")],
             [KeyboardButton(text="⬅️ Orqaga")]
         ],

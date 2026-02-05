@@ -7,13 +7,29 @@ def products_inline(products):
         keyboard.append([
             InlineKeyboardButton(
                 text=f"{product['name']} - {product['price']} so'm",
-                callback_data=f"product_{product['id']}"
+                callback_data=f"adminproduct_{product['id']}"
             )
         ])
+        
 
     return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+def product_actions(product_id):
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="✏️ Update",
+                    callback_data=f"adminupdate_{product_id}"
+                ),
+                InlineKeyboardButton(
+                    text="🗑 Delete",
+                    callback_data=f"admindelete_{product_id}"
+                )
+            ]
+        ]
+    )
+
 
 def users_inline(users):
     keyboard = []
