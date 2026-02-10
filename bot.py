@@ -9,6 +9,7 @@ from handlers.user.menu import router as menu_router
 from handlers.user.products import router as product_router
 from handlers.admin.panel import router as admin_router
 from handlers.admin.product import router as admin_product_router
+from handlers.user.cart import router as cart_router
 
 
 
@@ -26,6 +27,7 @@ async def main():
     dp.include_router(product_router)
     dp.include_router(admin_router)
     dp.include_router(admin_product_router)
+    dp.include_router(cart_router)
 
 
     await dp.start_polling(bot)

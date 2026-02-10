@@ -5,7 +5,8 @@ def user_menu():
         keyboard=[
             [KeyboardButton(text="🛍 Mahsulotlar")],
             [KeyboardButton(text="📦 Buyurtmalarim")],
-            [KeyboardButton(text="👤 Profil")]
+            [KeyboardButton(text="👤 Profil")],
+            [KeyboardButton(text="🛒 Savatcha")]
         ],
         resize_keyboard=True
     )
